@@ -23,6 +23,7 @@ defmodule Test13.Web.Router do
   scope "/api", Test13.Web do
     pipe_through :api
 
-    resources "/users", UserController
+    resources "/users", UserController, only: [:index, :show, :create, :delete, :update]
+    resources "/admins", AdminController, only: [:index, :show, :create, :delete, :update]
   end
 end
