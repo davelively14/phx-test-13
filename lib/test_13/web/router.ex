@@ -20,7 +20,9 @@ defmodule Test13.Web.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Test13.Web do
-  #   pipe_through :api
-  # end
+  scope "/api", Test13.Web do
+    pipe_through :api
+
+    resources "/users", UserController
+  end
 end
